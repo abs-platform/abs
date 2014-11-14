@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Android Beyond the Stratosphere</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <!-- <link href="assets/css/bootstrap.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- <link href="assets/css/bootstrap-responsive.css" rel="stylesheet"> -->
+    <link type="text/css" rel="stylesheet" href="assets/css/jquery.tocify.css" />
+              
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 40px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h2,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .col-md-4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .col-md-4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 20px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .col-md-4 + .col-md-4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+
+
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#About">Android Beyond the Stratosphere</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#Publications">Publications</a></li>
+        <li><a href="#Students">Students</a></li>
+        <li><a href="#Press">Press</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <!-- NAVBAR
+    ================================================== -->
+    <!-- <div class="navbar-wrapper"> -->
+      <!-- <div class="container"> -->
+
+<!--         <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Vilynx</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#players">Players</a></li>
+               
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+
+   
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <!-- <div class="col-md-3 hidden-xs hidden-sm"> -->
+        <!-- <div id="toc" class="tocify"></div> -->
+        <!-- </div> -->
+        <div class="col-md-8 col-md-offset-2">
+          <!-- START THE FEATURETTES -->
+              <div class="featurette">
+               <div class="row">
+               <img src="assets/img/abs_logo.jpg" class="col-md-4 col-md-offset-4" />
+                <!-- <h1 id="gallery" class="col-md-7 col-md-offset-1">Android Beyond the Stratosphere</h1>              -->
+               </div>
+               <h1 id="About">About the Project</h1>
+                The aim of this project is to explore the satellite-on-a-phone architecture to enable a low cost
+                modular pico-satellite with high reproducibility and fast development cycles towards the
+                democratization of space. This project has three different contributions, namely: 1) the
+                development of a Android Real Time OS (ARTOS) that will enable the execution of real-time
+                android applications on top of the Linux Kernel; 2) the design and implementation of the
+                hardware modules to turn the android-phone into an android-based pico-satellite, called the
+                Open-Source Nano-Satellite Platform and 3) the launch of the satellite and creation of the first
+                Open Space Station, which will give access to the phone-on-a-sat telemetry data to anyone with
+                a WiFi booster and a directional antenna.<br />
+                This project has been sponsored by a Google Faculty Research Award, Summer 2013.
+                <h2>Android Real-Time OS (ARTOS)</h2>
+                The first step towards the Android Real-Time OS is to migrate from Android OS to an OS capable
+                of providing Real-Time capabilities. To do this, we use Preempt-RT
+                and integrate them with the Linux kernel inside the Android device. Once the ARTOS is achieved, the software that interfaces between the on board computer
+                (android phone) and the rest of the satellite subsystems (ADCS, Earth Communication, EPS),
+                which is in charge of the data-handling and telemetry from/to the Ground Station will be
+                developed on top of the ARTOS. The Android Real-Time OS is expected to be an Android OS with
+                real-time functionalities and an easy interface to access the satellite subsystems. <br /><br />
+                One of the objectives of the Open-Access Space Station is to allow developers and users create
+                their own applications and test them on the Stratospheric Android. Towards this objective, the
+                second stage of the ARTOS is to develop a Software Development Toolkit (SDK) that will enable
+                android developers access the different satellite payloads and subsystems in an easy way,
+                pursuing two purposes: first, it will allow a quick integration of the different in-home developed
+                payloads to be run on the stratospheric android; second, it will provide the basis for in-space
+                application testing. Although the possibility to let developers and users run their own applications
+                on the satellite is constrained usually due to the lack of energy and computation capabilities of
+                the satellites, the team has developed (as part of the MCATS) a Prolog-Based Constrain-
+                Scheduler that can successfully schedule different tasks and applications to be run in such a
+                resource-limited scenario.
+                <h2>Open-Source Nano-Satellite Platform</h2>
+               New hardware-dependent modules will need to be developed, namely:
+               <ul>
+               <li>Attitude control System: an attitude determination and control system (ADCS) will be designed using phone's already present gyroscopes and magnetometer, based on the previous attitude control systems developed for Cat-1 and Cat-3. The attitude control system will use both passive (passive magnets and magnetic hysteresis rods) and active (actuator coil).</li>
+               <li>Earth Communication System: patch antennas and new amplifiers will be added to the phone in order to communicate with WiFi (30-33dBm).</li>
+              <li>Power Extraction Mechanisms: solar cells will be added using a non-deployable structure to the phone.</li>
+              </ul>
+              These hardware modules will be made publicly available as open-source hardware together with design specifications and required interfaces and software.
+              <br />
+              In order to use the Stratospheric Android Architecture as a low-cost, highly-configurable, fast-
+              development platform for pico-satellites, it is necessary to explore new ways to add payloads to
+              the phone and to connect new hardware modules. To do this, the possibility to connect other
+              payloads through USB will be explored together with the software modules required to achieve
+              this purpose. In this stage, the Arduino Uno board (open-source hardware compatible with
+              Android USB host) will be used to develop several payload demonstrators. Similarly to the first
+              stage, the hardware and software developed as payload demonstrators and to connect these
+              payloads to the stratospheric android will be open-source
+              <h2>Open Space Station</h2>
+              The first stage of the Open Space Station is educational: the main purpose is to enable anyone
+              with a WiFi antenna connect to the satellite and receive its telemetry data. Also, the telemetry
+              data of the satellite will be made available on a website and accessible to any user. Towards this
+              objective, a website will be published with: 1) Current status of the project, 2) Real-Time Data
+              received by the satellite-on-a-phone, 3) Tutorial and Open-Design Hardware on how to build your
+              own WiFi antenna to connect to the satellite, together with the required interfaces and software
+              to connect it to a computer.<br />
+              Development of an Application Programming Interface (API) that allows sending commands to
+              the Open Space Station either to receive a specific set of data or activate different
+              payloads/applications already present on the Open-Access Space Station.
+              </div>
+              <hr class="featurette-divider">
+              <div class="featurette" style="margin-top:-10px;">
+              <h1 id="Publications">List of Publications</h1>
+                <ol>
+                <li style="margin-bottom:5pt;">"In Pursuit of Real-Time Capabilities for Embededed Linux Systems: a qualitative comparison of Xenomai and Preempt-RT"
+                Elisenda Bou-Balust, Marc Marí, Alexandru Lungu, Carles Araguz, Kenny Root, Eduard Alarcón.<br />
+                <font style="font-size:8pt;">Abstract: The proliferation of embedded devices and general-purpose single-board computers together with the increase in their affordability has made them cover a large range of applications: from smartphones to consumer electronics, medical applications and industrial automation, amongst others. Due to the higher complexity and computing demands of these systems as well as the need of hardware support, Linux has been used to provide an open-soure operating system and programming environment in embedded systems. However, new applications of embedded and single-board computers such as medical equipment and space systems -requiring either real-time or priority-aware operation- showcased the need of a Real-Time Operating System (RTOS). This paper does a benchmark comparison of two Real-Time Extended Linux alternatives, namely Xenomai and Preempt-RT targeting embedded systems. This comparison provides as a quantitative metric, the latency measurements of both extended Linux Kernels on a Raspberry Pi.</font>
+                </li>
+                <li style="margin-bottom:5pt;">"On Scalability Limits of Resource Constrained General Purpose Fractionated Satellite Network Architectures"
+                Iñigo del Portillo, Elisenda Bou-Balust, Marc Sanchez-Net, Daniel Selva, Eduard Alarcón<br /><font style="font-size:8pt;">
+                Abstract: Fractionated Satellite Networks are a novel concept in space systems. On these networks, several satellites cooperate and collaborate by exchanging resources wirelessly in order to obtain an aggregated network capability higher than the sum of the individual capabilities of the different satellites that compose it. Fractionated Satellite Networks are a generalization of Fractionated Satellites. Scalability is defined as the ability of a system to maintain its performance and function, and retain all its desired properties when its scale is increased greatly without having a corresponding increase in the systems complexity. The whole concept of fractionation (both at spacecraft level and network level) is based on the use of multiple satellites that perform jointly a function that can be further expanded by adding new satellites to the system. Because of that, the concept of scalability is one of the most important on these architectures, as systems that do not scale well present a very poor performance when adding new agents, adding to labour costs and harming quality of service.</font>
+                </li>
+                <li>"On Autonomous Software Architectures for Distributed Spacecraft: a Local-Global Policy". Carles Araguz, Angel Alvaro, Iñigo del Portillo, Eduard Alarcón, Elisenda Bou-Balust<br /><font style="font-size:8pt;">
+                Abstract: As part of the on-going democratization of access to space, new trends such as nano satellite missions, pico-satellite swarms or fractionated spacecraft have experimented a very significant growth. The particularities of these systems (high modularity, re-usability and low processing capabilities) with respect to the traditional monolithic satellite missions entail the need for new software architecture approaches. This paper reviews the current software architectures used in nano and pico-satellite missions and derives a set of quality metrics and design guidelines with the intention of providing the basis towards a new generation of small-satellite software architectures.</font>
+                </li>
+                <li>"From Local Area Networks to Space Area Networks: Deployment-Stage Scalability Analysis of a WiFi Wireless Communication Link for a Pico-Satellite Serving Dual-Type Earth Communities". 
+                Elisenda Bou-Balust, Jorge Cantero, Iñigo del Portillo, Adria Recasens, Eduard Alarcón.<br /><font style="font-size:8pt;">
+                Abstract: This work encompasses both a feasibility study and a scalability analysis of a WiFi communication downlink between a phone-based pico-satellite and a dual-type ground segment community, addressed by a nested model based optimization methodology.</font>
+                </li>
+                </ol>
+                <h2>MSc Theses</h2>
+                <ul>
+                <li>"Towards a Modular Nano-Satellite Software Platform: Prolog Constraint-based Scheduling and System Architecture", September 2014.<br />
+                AUTHOR: Carles Araguz. ADVISORS: Eduard Alarcón, Elisenda Bou-Balust.<br />
+                <font style="font-size:8pt;">
+                Submitted in partial fullfillment of the degree in Electronics Engineering at Telecomunications Engineering School of the Technical University of Catalonia - UPC Barcelona Tech.<br />
+                ABSTRACT: During the last decade, many universities, research centers and private companies have started developing their miniature satellites. These small spacecraft, advantageous in terms of development-costs and -times, have been enabled by the miniaturization of several hardware technologies (embedded systems, COTS components) and the application of modularity-driven designs. However, this effort has been mainly focused on the hardware architecture but scarcely approached from the software architecture perspective.
+                The purpose of this thesis is twofold. On the one hand, this work focuses on the software aspects of nano-satellites through the analysis of software architectures implemented in current nano- satellite missions. Such analysis allowed the generation of an evaluation framework which encompasses five quality attributes and which is targeted for these particular kinds of space systems. The result of this preliminary study converged in the definition of a set of design criteria that have been applied in the development of the general-purpose nano-satellite software architecture presented in this dissertation. 
+                One the other hand, this work consisted in the design and implementation of a core component in satellite autonomy systems: a task scheduler. Entirely written in Prolog and using constrain programming paradigm, this work details the development and test of a multi-resource fully-elastic priority-based task scheduler which has been integrated within the nano-satellite software architecture and which allows to operate the spacecraft with minimum human intervention.
+                </font>
+                </li>
+                <li>"From Local Area Networks to Space Area Networks: Deployment-Stage Scalability Analysis of a WiFi Wireless Communication Link for a Pico-Satellite Serving Dual-Type Earth Communities", September 2014.<br />
+                AUTHOR: Jorge Cantero. ADVISORS: Eduard Alarcón, Elisenda Bou-Balust.<br />
+                <font style="font-size:8pt;">
+                Submitted in partial fullfillment of the degree of Master in Telecommunications Engineering at Telecomunications Engineering School of the Technical University of Catalonia - UPC Barcelona Tech.<br />
+                ABSTRACT: The goal of this thesis was to study the feasibility and scalability, in terms of communications, of the ABS project which is being developed at the Technical University of Catalonia UPC BarcelonaTech with educational purposes aiming to design a phone-based nano-statellite (or PhoneSat). The satellite will be able to establish connections with both the ground segment and other nano-satellites through the standards compatibles with the mobile device such as GSM, WCDMA, HSDPA, LTE, Bluetooth and WiFi. The main focus of study was the development of an optimization-based methodology in order to design the physical layer of the communication WiFi link taking into consideration that the ABS project amis to provide its services to a multiple type earth community. Thus, it has been made the optimization of the data downloaded by both users so that they are maximized under certain criteria such as the size of the receiving antenna and the power transmitted by the PhoneSat in order to benefit both ground and space segments. Finally, the optimization methodology has been applied and several scenarios as well as a scalability analysis are presented with the purpose of showing how optimal parameters change as the number of users varies. Additionally, it has been done a brief study to determine which is the best technology to establish a communication among phone-based satellites depending on the distance between them, exploratorily aiming nanosat constellation.
+                </font>
+                </li>
+                </ul>
+              </div>
+
+              <hr class="featurette-divider">
+
+              
+              <hr class="featurette-divider">
+
+              <!-- /END THE FEATURETTES -->
+
+
+              <!-- FOOTER -->
+              <footer>
+                <p class="pull-right"><a href="#">Back to top</a></p>
+               
+              </footer>
+        </div><!-- span 9-->
+      </div><!-- row fluid -->
+    </div><!-- container fluid-->
+
+
+    <!-- Le javascript
+    ================================================== -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <!-- // <script src="assets/js/bootstrap-transition.js"></script> -->
+    <!-- // <script src="assets/js/bootstrap-alert.js"></script> -->
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <!-- // <script src="assets/js/bootstrap-dropdown.js"></script> -->
+    <!-- // <script src="assets/js/bootstrap-scrollspy.js"></script> -->
+    <!-- // <script src="assets/js/bootstrap-tab.js"></script> -->
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <!-- // <script src="assets/js/bootstrap-popover.js"></script> -->
+    <!-- // <script src="assets/js/bootstrap-button.js"></script> -->
+    <!-- // <script src="assets/js/bootstrap-collapse.js"></script> -->
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <!-- // <script src="assets/js/bootstrap-typeahead.js"></script> -->
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery.tocify.min.js"></script>
+      <script src="assets/js/ZeroClipboard.js"></script>
+    <script src="assets/js/holder.js"></script>
+      // <script src="https://www.cibergrid.com/test_eli/gallery_tests/vilynx_gallery_plugin.js" debug="true" highres="true"></script>
+      <!-- // <script src="https://www.vilynx.com/plugins/vilynx_gallery_plugin.js"></script> -->
+    
+    <script>
+      !function ($) {
+              //Executes your code when the DOM is ready.  Acts the same as $(document).ready().
+              $(function(){
+                // carousel demo
+                // $('#myCarousel').carousel()
+              });
+              $(function() {
+                  //Calls the tocify method on your HTML div.
+                  // var toc = $("#toc").tocify({ });
+              });
+              $(window).on('scroll',function(){
+                // var a= $(document).scrollTop();
+                // if(a>500) a=500;
+                // $('#toc').css('margin-top','-'+a+'px');
+              });
+              $(function(){
+                var clientTarget = new ZeroClipboard();
+                // $('#flash-loaded').fadeIn();
+                // clientTarget.on( "complete", function(clientTarget, args) {
+                //         clientTarget.setText( args.text );
+                //         $('#target-to-copy-text').fadeIn();
+                //     });
+                // alert('b');
+
+              });
+               
+          }(window.jQuery)
+
+    </script>
+
+  </body>
+</html>
